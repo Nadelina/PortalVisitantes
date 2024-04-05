@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PotalVisitantes.DATA.Data.Entities
+namespace PortalVisitantes.DATA.Data.Entities
 {
 	public class Catalogo
 	{

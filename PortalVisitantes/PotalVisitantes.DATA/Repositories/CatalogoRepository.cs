@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PortalVisitantes.DATA.Data;
+using PortalVisitantes.DATA.Data.Entities;
+using PortalVisitantes.DATA.Repositories.Interfaces;
 
-namespace PotalVisitantes.DATA.Repositories
+namespace PortalVisitantes.DATA.Repositories
 {
-	internal class CatalogoRepository
+	public class CatalogoRepository : GenericRepository<Catalogo>, ICatalogoRepository
 	{
+		public CatalogoRepository(ApplicationDbContext context) : base(context)
+		{
+		}
+		public async Task<Catalogo> ObtenerPorIdAsync(int id) =>
+		   await context.Catalogos.FindAsync(id);
 	}
+	
 }

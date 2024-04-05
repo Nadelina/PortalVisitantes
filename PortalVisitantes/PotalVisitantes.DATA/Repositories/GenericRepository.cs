@@ -1,8 +1,8 @@
-﻿using PotalVisitantes.DATA.Data;
-using PotalVisitantes.DATA.Repositories.Interfaces;
+﻿using PortalVisitantes.DATA.Data;
+using PortalVisitantes.DATA.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace PotalVisitantes.DATA.Repositories
+namespace PortalVisitantes.DATA.Repositories
 {
 	public class GenericRepository<T> : IGenericRepository<T> where T : class
 	{

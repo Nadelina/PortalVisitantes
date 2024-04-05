@@ -1,7 +1,7 @@
-﻿using PotalVisitantes.DATA.Data.Entities;
+﻿using PortalVisitantes.DATA.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace PotalVisitantes.DATA.Data
+namespace PortalVisitantes.DATA.Data
 {
 	public class ApplicationDbContext : DbContext
 	{

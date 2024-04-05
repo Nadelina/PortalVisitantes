@@ -1,4 +1,4 @@
-﻿namespace PotalVisitantes.DATA.Repositories.Interfaces
+﻿namespace PortalVisitantes.DATA.Repositories.Interfaces
 { 
 	public interface IGenericRepository<T> where T : class
 {
