@@ -9,6 +9,7 @@ namespace PortalVisitantes.DATA.Data.Entities
 {
 	public class Visitantes
 	{
+        public int Id { get; set; }
         public int Dui { get; set; }
         public string Nombre { get; set; }
 		[DataType(DataType.EmailAddress)]
@@ -17,5 +18,6 @@ namespace PortalVisitantes.DATA.Data.Entities
         public DateTime FechaNacimiento { get; set; } 
         [DataType(DataType.PhoneNumber)]
         public int Telefono { get; set; }
+        public string Generacion { get; set; } = string.Empty;
     }
 }

@@ -8,7 +8,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalVisitantes.API", "Por
 		{614C23EF-3DF7-4C3E-9569-E1F5828D8218} = {614C23EF-3DF7-4C3E-9569-E1F5828D8218}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalVisitantes.APP", "PortalVisitantes.APP\PortalVisitantes.APP.csproj", "{2C560ECF-ECA1-40A9-9B58-11CA4F74B01D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalVisitantes.Presentation", "PortalVisitantes.APP\PortalVisitantes.Presentation.csproj", "{2C560ECF-ECA1-40A9-9B58-11CA4F74B01D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PortalVisitantes.DATA", "PotalVisitantes.DATA\PortalVisitantes.DATA.csproj", "{614C23EF-3DF7-4C3E-9569-E1F5828D8218}"
 EndProject

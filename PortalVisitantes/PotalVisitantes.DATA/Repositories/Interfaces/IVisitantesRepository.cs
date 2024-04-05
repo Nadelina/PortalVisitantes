@@ -5,6 +5,7 @@ namespace PortalVisitantes.DATA.Repositories.Interfaces
 		public interface IVisitantesRepository : IGenericRepository<Visitantes>
 	{
 		Task<Visitantes> ObtenerPorIdAsync(int id);
+		Task<Visitantes> ObtenerPorDuiAsync(int dui);
 
 	}
 	

@@ -1,0 +1,66 @@
+﻿@model PortalVisitantes.Presentation.Models.VisitanteViewModel
+
+@{
+    ViewData["Title"] = "Registro nuevo visitante";
+}
+
+<div class="container">
+    <h1 class="text-center mb-4">Nuevo visitante</h1>
+    <div class="mb-3">
+        <a asp-action="Index" asp-controller="Visitante" class="btn btn-outline-primary">Regresar</a>
+    </div>
+
+    <form asp-action="Crear" asp-controller="Visitante" method="post" class="card p-3 mb-5 bg-white rounded">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="DUI" class="form-label">DUI</label>
+                <input type="number" maxlength="8" min="8" class="form-control" id="DUI" asp-for="Dui" placeholder="DUI sin guion">
+            </div>
+            <div class="mb-3">
+                <label for="Nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="Nombre" asp-for="Nombre" placeholder="Escribir nombre">
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="Email" asp-for="Email" placeholder="Escribir email">
+            </div>
+            <div class="mb-3">
+                <label for="FechaNac" class="form-label">Fecha de nacimiento</label>
+                <input type="date" class="form-control" id="FechaNac" asp-for="FechaNacimiento">
+                <span class="text-danger" id="errorFechaNac" style="display:none;">Por favor, ingrese la fecha de nacimiento.</span>
+            </div>
+            <div class="mb-3">
+                <label for="Telefono" class="form-label">Telefono</label>
+                <input type="tel" class="form-control" id="Telefono" asp-for="Telefono" placeholder="Escribir telefono sin guion">
+            </div>
+            <button type="submit" class="btn btn-success">Registrar visitante</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            var hoy = new Date().toISOString().split('T')[0];
+            $('#FechaNac').val(hoy);
+
+            $('form').submit(function (event) {
+                var fecha = $('#FechaNac').val();
+                var valido = true;
+                // Limpiar errores anteriores
+                $('.text-danger').hide();
+                // Validar la fecha
+                if (fechaNac === '') {
+                    $('#errorFechaNac').show();
+                    valido = false;
+                }
+               
+                // Si algún campo no es válido, previene el envío del formulario
+                if (!valido) {
+                    event.preventDefault();
+                }
+            });
+        });
+    </script>
+}

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<PortalVisitantes.Presentation.Models.VisitanteViewModel>
+@{
+	ViewData["title"] = "Visitantes";
+}
+
+<section class="p-5">
+
+	<h1 class="text-center">Visitantes</h1>
+	<input hidden id="Mensaje" value="@TempData["Mensaje"]" />
+
+
+	<div class="d-flex justify-content-between mb-3">
+		<a asp-action="Index" asp-controller="Visitante" class="btn btn-outline-primary"><span class="fa fa-arrow-left"></span> Regresar</a>
+
+		<a asp-action="Crear" class="btn btn-outline-success"><span class="fa fa-plus"></span> Registrar visita</a>
+
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="table-responsive custom-table-responsive">
+				<table id="itemDatatable" class="table table-hover text-nowrap">
+					<thead>
+						<tr>
+							<th>DUI</th>
+							<th>Nombre</th>
+							<th>Email</th>
+							<th>Fecha Nacimiento</th>
+							<th>Telefono</th>
+							<th>Generación</th>
+							<th> </th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td> @item.Dui </td>
+								<td> @item.Nombre </td>
+								<td> @item.Email </td>
+								<td> @item.FechaNacimiento </td>
+								<td> @item.Telefono </td>
+								<td> @item.Generacion </td>
+								<td>
+									<span alt="Editar en mantenimiento" class="fa fa-edit"></span>
+									<span alt="Eliminar en mantenimiento" class="fa fa-trash"></span>
+								</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+@section Scripts {
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+
+
+	<script>
+		$("#itemDatatable").DataTable({
+			language: {
+				search: "Buscar",
+				lengthMenu: "Mostrar _MENU_ registros",
+				zeroRecords: "No se encontraron registros",
+				emptyTable: "Ningún dato disponible en esta tabla",
+				info: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+				infoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
+				infoFiltered: "(filtrado de un total de _MAX_ registros)",
+				loadingRecords: "Cargando",
+				paginate: {
+					first: "Primero",
+					last: "Ultimo",
+					next: "siguiente",
+					previous: "Anterior"
+				},
+				aria: {
+					sortAscending: ": Activar para ordenar la columna de manera ascendente",
+					sortDescending: ": Activar para ordenar la columna de manera descendente"
+				}
+
+			},
+			columnDefs: [{
+				targets: 2,
+				orderable: false,
+				searchable: false
+			}]
+		});
+	</script>
+}
